@@ -1,4 +1,4 @@
-# SVG Format NFT Marketplace Project
+# COSMOS NFT MINTING DAPP
 
 Contract address: 0x7e70FB24DAF78a5b15637842D2bdCDf0dBd4E923
 
