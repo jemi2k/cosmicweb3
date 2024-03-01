@@ -25,6 +25,23 @@
   animation: changeColors 6s infinite alternate;
 }
 
+
+.cool-date-input {
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+  color: #3498db;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.cool-date-input:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

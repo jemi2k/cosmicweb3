@@ -160,7 +160,26 @@ function App() {
         {" "}
         <br />
         {isWalletInstalled ? (
-          <button onClick={connectWallet}>Connect Wallet</button>
+          <button 
+          style={{
+            backgroundColor: 'blue',
+            border: 'none',
+            color: 'white',
+            padding: '15px 32px',
+            textAlign: 'center',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontSize: '16px',
+            margin: '2px 2px',
+            cursor: 'pointer',
+            borderRadius: '5px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            transition: 'background-color 0.3s',
+            opacity: isMinting ? '0.6' : '1',
+            pointerEvents: isMinting ? 'none' : 'auto',
+          }} 
+
+          onClick={connectWallet}>Connect Wallet</button>
         ) : (
           <p>Install Metamask wallet</p>
         )}
@@ -169,29 +188,34 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Cosmic NFT Minting Dapp
 
-      </h1>
-      <h2> Mint NFT of your ZodiacSign, choose your birth date then MINT! </h2>
-      <p>Connected as: {account}</p>
+<div>
+  <h1 style={{color: '#dbebfb', fontFamily: 'Arial Black, sans-serif', fontSize: '3em', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '2px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Cosmos NFT Minting Dapp</h1>
+  <h2 style={{color: '#02315f', fontFamily: 'Tahoma, sans-serif', fontSize: '1.5em', marginTop: '0', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'}}>Unlock the cosmos with your own Zodiac Sign NFT!<br/>Pick your birth date and mint!</h2>
+</div>
+      {/* <p>Connected as: {account}</p> */}
  
-      <input onChange={handleDateInput} value={date} type="date" id="dob" />
+      <input className="cool-date-input" onChange={handleDateInput} value={date} type="date" id="dob" />
       <br />
       <br />
       {zodiacSign ? (
         <svg
+          
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMinYMin meet"
           viewBox="0 0 300 300"
-          width="400px"
-          height="400px"
+          width="350px"
+          height="350px"
+          
         >
-          <style>{`.base { fill: white; font-family: serif; font-size: 24px;`}</style>
+          
+          
+          <style>{`.base { fill: white; font-family: Pacifico; font-size: 44px;`}</style>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop id="startColor" offset="0%" stop-color="blue"/>
       <stop id="endColor" offset="100%" stop-color="red"/>
     </linearGradient>
-          <rect id="animatedRect" width="100%" height="100%" fill="url(#gradient)" />
+          <rect rx="20" ry="20" id="animatedRect" width="100%" height="100%" fill="url(#gradient)" />
           <text
             x="50%"
             y="50%"
@@ -206,9 +230,29 @@ function App() {
  
       <br />
       <br />
-      <button disabled={isMinting} onClick={mintNFT}>
-        {isMinting ? "Minting..." : "Mint"}
-      </button>
+      <button 
+  style={{
+    backgroundColor: isMinting ? '#808080' : '#4CAF50',
+    border: 'none',
+    color: 'white',
+    padding: '15px 32px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: '16px',
+    margin: '2px 2px',
+    cursor: 'pointer',
+    borderRadius: '5px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    transition: 'background-color 0.3s',
+    opacity: isMinting ? '0.6' : '1',
+    pointerEvents: isMinting ? 'none' : 'auto',
+  }} 
+  disabled={isMinting} 
+  onClick={mintNFT}
+>
+  {isMinting ? 'Minting...' : 'Mint NFT'}
+</button>
     </div>
   );
 }
