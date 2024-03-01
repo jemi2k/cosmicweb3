@@ -13,6 +13,18 @@
   }
 }
 
+@keyframes changeColors {
+  0% { stop-color: #0000ff; } /* Blue */
+  25% { stop-color: #8000ff; } /* Purple */
+  50% { stop-color: #ff00ff; } /* Pink */
+  75% { stop-color: #ff0080; } /* Magenta */
+  100% { stop-color: #ff0000; } /* Red */
+}
+
+#startColor, #endColor {
+  animation: changeColors 6s infinite alternate;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +47,6 @@
   to {
     transform: rotate(360deg);
   }
+
+
 }
